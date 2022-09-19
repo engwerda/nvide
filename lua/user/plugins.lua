@@ -3,7 +3,7 @@ local fn = vim.fn
 -- returns the require for use in `config` parameter of packer's use
 -- expects the name of the config file
 local function get_config(name)
-  return string.format('require("config/%s")', name)
+  return string.format('require("user/config/%s")', name)
 end
 
 -- Automatically install packer
@@ -92,7 +92,7 @@ return packer.startup(function(use)
   use { "tzachar/cmp-tabnine",config = get_config("tabnine"), after = "nvim-cmp", run="./install.sh" }
 
 
-  use({ "github/copilot.vim" })
+  use({ "github/copilot.vim", config = get_config("copilot") })
 
 	-- snippets
 	use({ "L3MON4D3/LuaSnip", commit = "79b2019c68a2ff5ae4d732d50746c901dd45603a" }) --snippet engine
