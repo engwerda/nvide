@@ -80,28 +80,69 @@ local opts = {
 
 local mappings = {
   ["<TAB>"] = { ":b#<cr>", "Last buffer" },
+  [";"] = { "<cmd>:call CocAction('format')<CR>", "Format buffer" },
   ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["W"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
-  ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
+  -- ["c"] = { "<cmd>Bdelete!<CR>", "Close Buffer" },
   ["h"] = { "<cmd>nohlsearch<CR>", "No Highlight" },
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 
-  b =  {
+  a = {
+    name = "Coc",
+    [";"] = { "<cmd>:call CocAction('format')<CR>", "Format buffer" },
+    a = { "<Plug>(coc-codeaction-selected)", "Code Action" },
+    d = { "<Plug>(coc-definition)", "Go to definition" },
+    y = { "<Plug>(coc-type-definition)", "Go to type definition" },
+    i = { "<Plug>(coc-implentation)", "Go to implentation" },
+    r = { "<Plug>(coc-references)", "Go to reference" },
+    s = { "<cmd>:call CocAction('doHover')<cr>", "Show description" },
+
+  },
+
+  b = {
     name = "Buffers",
-    b = { "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Buffers"},
-    d = { ":bd<CR>", "Kill buffer"},
-    D = { ":bd!<CR>", "Kill buffer discard any changes"},
+    ["<TAB>"] = { ":b#<cr>", "Last buffer" },
+    b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+    d = { ":bd<CR>", "Kill buffer" },
+    D = { ":bd!<CR>", "Kill buffer discard any changes" },
+    f = { "<cmd>Telescope find_files<cr>", "Find files", },
     n = { ":bnext<CR>", "Next tab" },
     l = { ":ls<CR>", "List buffers" },
     p = { ":bprevious<CR>", "Previous tab" },
     P = { ":BufferLinePick<CR>", "Pick Buffer" },
   },
+  c = {
+    name = "Code",
+    [";"] = { "<cmd>:call CocAction('format')<CR>", "Format buffer" },
+    c = { "<cmd>call CocActionAsync('codeAction', 'cursor')<cr>", "Action" },
+    C = { "<cmd>Copilot panel<cr>", "Copilot panel" },
+  },
+
+    d = {
+      name = 'debugger',
+      b = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", 'Set Breakpoint' },
+      B = { "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>" },
+      c = { "<cmd>lua require('dap').continue()<CR>", 'Start/Continue' },
+      s = { "<cmd>lua require('dap').step_into()<CR>", 'Step Into' },
+      n = { "<cmd>lua require('dap').step_over()<CR>", 'Step Over' },
+      o = { "<cmd>lua require('dap').step_out()<CR>", 'Step Out' },
+      u = { "<cmd>lua require('dap').up()<CR>", 'Up' },
+      d = { "<cmd>lua require('dap').down()<CR>", 'Down' },
+      q = { "<cmd>lua require('dap').terminate()<CR>", 'Terminate' },
+      t = {
+        name = 'test',
+        f = { "<cmd>lua require('dap-python').test_method()<CR>", 'Test Function/Method' },
+        c = { "<cmd>lua require('dap-python').test_class()<CR>", 'Test Class' },
+      },
+    },
 
   f = {
     name = "Files",
-    f = { "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown{previewer = false})<cr>", "Find files", },
+    b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+    f = { "<cmd>Telescope find_files<cr>", "Find files", },
+    p = { "<cmd>Telescope git_files<cr>", "Find files", },
     t = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   },
 
@@ -169,7 +210,8 @@ local mappings = {
 
   p = {
     name = "Projects",
-  ["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+    ["p"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
+    f = { "<cmd>Telescope git_files<cr>", "Find files", },
   },
 
   P = {
@@ -180,6 +222,17 @@ local mappings = {
     S = { "<cmd>PackerStatus<cr>", "Status" },
     u = { "<cmd>PackerUpdate<cr>", "Update" },
   },
+
+  r = {
+      name = 'refactoring',
+      b = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Block')<CR>]], 'extract block' },
+      f = {
+        [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>]],
+        'extract function to file',
+      },
+      i = { [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], 'inline variable' },
+  },
+
   s = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -202,7 +255,57 @@ local mappings = {
     h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
     v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
   },
+
+  T = {
+    name = "Toggle",
+    c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+  },
+
+  w = {
+    name = "Windows",
+    s = { "<cmd>:wincmd s<cr>", "Split window" },
+    v = { "<cmd>:wincmd v<cr>", "Split window vertically" },
+    w = { "<cmd>:wincmd w<cr>", "Switch windows" },
+    q = { "<cmd>:wincmd q<cr>", "Quit a window" },
+    T = { "<cmd>:wincmd T<cr>", "Break out into a new tab" },
+    x = { "<cmd>:wincmd x<cr>", "Swap current with next" },
+    ["-"] = { "<cmd>:wincmd -<cr>", "Decrease height" },
+    ["+"] = { "<cmd>:wincmd +<cr>", "Increase height" },
+    ["<lt>"] = { "<cmd>:wincmd lt<cr>", "Decrease width" },
+    [">"] = { "<cmd>:wincmd ><cr>", "Increase width" },
+    ["|"] = { "<cmd>:wincmd |<cr>", "Max out the width" },
+    ["_"] = { "<cmd>:wincmd _<cr>", "Max out the height" },
+    ["="] = { "<cmd>:wincmd =<cr>", "Equally high and wide" },
+    h = { "<cmd>:wincmd h<cr>", "Go to the left window" },
+    l = { "<cmd>:wincmd l<cr>", "Go to the right window" },
+    k = { "<cmd>:wincmd k<cr>", "Go to the up window" },
+    j = { "<cmd>:wincmd j<cr>", "Go to the down window" },
+    t = { "<cmd>:WindowsToggleAutowidth<cr>", "Toggle auto width" },
+    m = { "<cmd>:WindowsMaximize<cr>", "Maximize" },
+  },
 }
+
+
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
+
+local function set_visual_keymaps()
+  which_key.register({
+    r = {
+      name = 'refactoring',
+      e = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>", 'extract function' },
+      f = {
+        [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]],
+        'extract function to file',
+      },
+      v = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]], 'extract variable' },
+      i = { [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], 'inline variable' },
+      r = { [[ <Esc><Cmd>lua require('refactoring').select_refactor()<CR> ]], 'select refactoring' },
+    },
+  }, {
+    prefix = '<leader>',
+    mode = 'v',
+  })
+end
+set_visual_keymaps()

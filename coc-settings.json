@@ -1,0 +1,74 @@
+{
+  "python.formatting.provider": "black",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "json",
+    "lua",
+    "python",
+    "typescript",
+    "scss",
+    "css",
+    "markdown",
+    "html"
+  ],
+  "snippets.ultisnips.directories": [
+    "UltiSnips",
+    "~/.config/nvim/utils/snips"
+  ],
+  "yank.highlight.duration": 300,
+  "pairs.enableCharacters": [
+    "(",
+    "[",
+    "{",
+    "'",
+    "\"",
+    "`"
+  ],
+  "languageserver": {
+    "sourcery": {
+      "command": "/home/simon/.local/bin/sourcery",
+      "args": [
+        "lsp"
+      ],
+      "filetypes": [
+        "python"
+      ],
+      "initializationOptions": {
+        "token": "user__SoLMwhliXfmgbv9qsHb0C0ZGysurwvcCRDeT971_LELyJEs1mQXqG5x46Q",
+        "extension_version": "coc.vim",
+        "editor_version": "vim"
+      },
+      "settings": {
+        "sourcery": {
+          "metricsEnabled": true
+        }
+      }
+    }
+  },
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": [
+        "start"
+      ],
+      "filetypes": [
+        "sh"
+      ]
+    }
+  },
+  "languageserver": {
+    "sql": {
+      "command": "sql-language-server",
+      "args": [
+        "up",
+        "--method",
+        "stdio"
+      ],
+      "filetypes": [
+        "sql",
+        "mysql"
+      ]
+    }
+  },
+  "Lua.telemetry.enable": false
+}
