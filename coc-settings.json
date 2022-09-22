@@ -1,20 +1,29 @@
 {
-  "python.formatting.provider": "black",
   "coc.preferences.formatOnSaveFiletypes": [
+    "python",
+    "markdown",
     "javascript",
     "json",
-    "lua",
-    "python",
-    "typescript",
-    "scss",
+    "html",
     "css",
-    "markdown",
-    "html"
+    "scss",
+    "typescript",
+    "typescriptreact",
+    "javascriptreact",
+    "vue",
+    "yaml",
+    "toml",
+    "dockerfile",
+    "sh",
+    "lua",
+    "htmldjango"
   ],
   "snippets.ultisnips.directories": [
     "UltiSnips",
     "~/.config/nvim/utils/snips"
   ],
+  "diagnostic.refreshOnInsertMode": true,
+  "codeLens.enable": true,
   "yank.highlight.duration": 300,
   "pairs.enableCharacters": [
     "(",
@@ -23,6 +32,29 @@
     "'",
     "\"",
     "`"
+  ],
+  // Python
+  "python.linting.flake8Enabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.formatting.provider": "black",
+  "pyright.organizeimports.provider": "isort",
+  "pyright.testing.provider": "pytest",
+  // Emmet
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "htmldjango": "html"
+  },
+  "html-css-support.enabledLanguages": [
+    "html",
+    "vue",
+    "blade",
+    "htmldjango",
+    "typescriptreact",
+    "javascriptreact"
+  ],
+  "html-css-support.styleSheets": [
+    "https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
   ],
   "languageserver": {
     "sourcery": {
@@ -34,18 +66,15 @@
         "python"
       ],
       "initializationOptions": {
-        "token": "user__SoLMwhliXfmgbv9qsHb0C0ZGysurwvcCRDeT971_LELyJEs1mQXqG5x46Q",
         "extension_version": "coc.vim",
         "editor_version": "vim"
       },
       "settings": {
         "sourcery": {
-          "metricsEnabled": true
+          "metricsEnabled": false
         }
       }
-    }
-  },
-  "languageserver": {
+    },
     "bash": {
       "command": "bash-language-server",
       "args": [
@@ -54,9 +83,28 @@
       "filetypes": [
         "sh"
       ]
-    }
-  },
-  "languageserver": {
+    },
+    "dockerfile": {
+      "command": "docker-langserver",
+      "filetypes": [
+        "dockerfile"
+      ],
+      "args": [
+        "--stdio"
+      ]
+    },
+    "lua": {
+      "command": "lua-lsp",
+      "filetypes": [
+        "lua"
+      ]
+    },
+    "nix": {
+      "command": "rnix-lsp",
+      "filetypes": [
+        "nix"
+      ]
+    },
     "sql": {
       "command": "sql-language-server",
       "args": [
