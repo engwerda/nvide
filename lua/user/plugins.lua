@@ -144,7 +144,9 @@ return packer.startup(function(use)
         {"nvim-lua/plenary.nvim"},
         {"nvim-treesitter/nvim-treesitter"}
     },
-    config = get_config("refactoring")
+    config =  function()
+      require("refactoring").setup()
+    end
   }
   -- Markdown
   use({ "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end, })

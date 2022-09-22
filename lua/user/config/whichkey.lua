@@ -290,22 +290,3 @@ local mappings = {
 which_key.setup(setup)
 which_key.register(mappings, opts)
 
-local function set_visual_keymaps()
-  which_key.register({
-    r = {
-      name = 'refactoring',
-      e = { "<Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>", 'extract function' },
-      f = {
-        [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]],
-        'extract function to file',
-      },
-      v = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]], 'extract variable' },
-      i = { [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], 'inline variable' },
-      r = { [[ <Esc><Cmd>lua require('refactoring').select_refactor()<CR> ]], 'select refactoring' },
-    },
-  }, {
-    prefix = '<leader>',
-    mode = 'v',
-  })
-end
-set_visual_keymaps()
