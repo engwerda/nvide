@@ -150,6 +150,12 @@ return packer.startup(function(use)
     end,
   })
   use({
+    "Pocco81/dap-buddy.nvim",
+    branch = "dev",
+    -- event = "BufWinEnter",
+    -- event = "BufRead",
+  })
+  use({
     'mfussenegger/nvim-dap-python',
     requires = 'mfussenegger/nvim-dap',
     config = function()
