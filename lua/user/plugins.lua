@@ -87,6 +87,14 @@ return packer.startup(function(use)
       require('windows').setup()
     end
   }
+  use({
+    "RRethy/vim-illuminate",
+    config = function()
+      require("user.config.illuminate").setup()
+    end
+  })
+
+
 
   -- Colorschemes
 
@@ -127,37 +135,37 @@ return packer.startup(function(use)
   -- Git
   use({ "lewis6991/gitsigns.nvim", config = get_config("gitsigns"), commit = "c18e016864c92ecf9775abea1baaa161c28082c3" })
 
-  -- DAP  
+  -- DAP
   use({
     "mfussenegger/nvim-dap",
-      config = function()
-        require("user.config.dap").setup()
-      end
+    config = function()
+      require("user.config.dap").setup()
+    end
   })
   use({
-      'rcarriga/nvim-dap-ui',
-      requires = 'mfussenegger/nvim-dap',
-      config = function()
-        require('user.config.dapui').setup()
-      end,
-    })
+    'rcarriga/nvim-dap-ui',
+    requires = 'mfussenegger/nvim-dap',
+    config = function()
+      require('user.config.dapui').setup()
+    end,
+  })
   use({
-      'mfussenegger/nvim-dap-python',
-      requires = 'mfussenegger/nvim-dap',
-      config = function()
-        require('user.config.dap-python').setup()
-      end,
-      ft = { 'python' },
-    })
-  
+    'mfussenegger/nvim-dap-python',
+    requires = 'mfussenegger/nvim-dap',
+    config = function()
+      require('user.config.dap-python').setup()
+    end,
+    ft = { 'python' },
+  })
+
   -- Refactoring
   use {
     "ThePrimeagen/refactoring.nvim",
     requires = {
-        {"nvim-lua/plenary.nvim"},
-        {"nvim-treesitter/nvim-treesitter"}
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-treesitter/nvim-treesitter" }
     },
-    config =  function()
+    config = function()
       require("user.config.refactoring").setup()
     end
   }
