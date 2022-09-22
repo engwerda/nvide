@@ -120,23 +120,6 @@ local mappings = {
     C = { "<cmd>Copilot panel<cr>", "Copilot panel" },
   },
 
-    d = {
-      name = 'debugger',
-      b = { "<cmd>lua require('dap').toggle_breakpoint()<CR>", 'Set Breakpoint' },
-      B = { "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>" },
-      c = { "<cmd>lua require('dap').continue()<CR>", 'Start/Continue' },
-      s = { "<cmd>lua require('dap').step_into()<CR>", 'Step Into' },
-      n = { "<cmd>lua require('dap').step_over()<CR>", 'Step Over' },
-      o = { "<cmd>lua require('dap').step_out()<CR>", 'Step Out' },
-      u = { "<cmd>lua require('dap').up()<CR>", 'Up' },
-      d = { "<cmd>lua require('dap').down()<CR>", 'Down' },
-      q = { "<cmd>lua require('dap').terminate()<CR>", 'Terminate' },
-      t = {
-        name = 'test',
-        f = { "<cmd>lua require('dap-python').test_method()<CR>", 'Test Function/Method' },
-        c = { "<cmd>lua require('dap-python').test_class()<CR>", 'Test Class' },
-      },
-    },
 
   f = {
     name = "Files",
@@ -223,16 +206,6 @@ local mappings = {
     u = { "<cmd>PackerUpdate<cr>", "Update" },
   },
 
-  r = {
-      name = 'refactoring',
-      b = { [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Block')<CR>]], 'extract block' },
-      f = {
-        [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>]],
-        'extract function to file',
-      },
-      i = { [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], 'inline variable' },
-  },
-
   s = {
     name = "Search",
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
@@ -284,7 +257,6 @@ local mappings = {
     m = { "<cmd>:WindowsMaximize<cr>", "Maximize" },
   },
 }
-
 
 
 which_key.setup(setup)

@@ -128,15 +128,28 @@ return packer.startup(function(use)
   use({ "lewis6991/gitsigns.nvim", config = get_config("gitsigns"), commit = "c18e016864c92ecf9775abea1baaa161c28082c3" })
 
   -- DAP  
-  use({ "mfussenegger/nvim-dap", config = get_config("dap") })
-  use({ "rcarriga/nvim-dap-ui", config = get_config("dapui") })
+  use({
+    "mfussenegger/nvim-dap",
+      config = function()
+        require("user.config.dap").setup()
+      end
+  })
+  use({
+      'rcarriga/nvim-dap-ui',
+      requires = 'mfussenegger/nvim-dap',
+      config = function()
+        require('user.config.dapui').setup()
+      end,
+    })
   use({
       'mfussenegger/nvim-dap-python',
       requires = 'mfussenegger/nvim-dap',
-      config = get_config("dap-python"),
+      config = function()
+        require('user.config.dap-python').setup()
+      end,
       ft = { 'python' },
     })
-
+  
   -- Refactoring
   use {
     "ThePrimeagen/refactoring.nvim",
@@ -145,7 +158,7 @@ return packer.startup(function(use)
         {"nvim-treesitter/nvim-treesitter"}
     },
     config =  function()
-      require("refactoring").setup()
+      require("user.config.refactoring").setup()
     end
   }
   -- Markdown
