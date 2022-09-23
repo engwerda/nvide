@@ -3,7 +3,7 @@ local fn = vim.fn
 -- returns the require for use in `config` parameter of packer's use
 -- expects the name of the config file
 local function get_config(name)
-  return string.format('require("user/config/%s")', name)
+  return string.format('require("config/%s")', name)
 end
 
 -- Automatically install packer
@@ -90,7 +90,7 @@ return packer.startup(function(use)
   use({
     "RRethy/vim-illuminate",
     config = function()
-      require("user.config.illuminate").setup()
+      require("config.illuminate").setup()
     end
   })
 
@@ -120,7 +120,7 @@ return packer.startup(function(use)
   -- Coq
   use({ 'neoclide/coc.nvim',
     config = function()
-      require('user.config.coc').setup()
+      require('config.coc').setup()
     end,
     branch = 'release'
   })
@@ -151,7 +151,7 @@ return packer.startup(function(use)
   use({ "lewis6991/gitsigns.nvim", config = get_config("gitsigns"), commit = "c18e016864c92ecf9775abea1baaa161c28082c3" })
   use({ 'TimUntersberger/neogit',
     requires = 'nvim-lua/plenary.nvim',
-    config = function() require('user.config.neogit').setup() end
+    config = function() require('config.neogit').setup() end
   })
   use({ "kdheepak/lazygit.nvim" })
   use({
@@ -170,14 +170,14 @@ return packer.startup(function(use)
   use({
     "mfussenegger/nvim-dap",
     config = function()
-      require("user.config.dap").setup()
+      require("config.dap").setup()
     end
   })
   use({
     'rcarriga/nvim-dap-ui',
     requires = 'mfussenegger/nvim-dap',
     config = function()
-      require('user.config.dapui').setup()
+      require('config.dapui').setup()
     end,
   })
   use({
@@ -190,7 +190,7 @@ return packer.startup(function(use)
     'mfussenegger/nvim-dap-python',
     requires = 'mfussenegger/nvim-dap',
     config = function()
-      require('user.config.dap-python').setup()
+      require('config.dap-python').setup()
     end,
     ft = { 'python' },
   })
@@ -203,7 +203,7 @@ return packer.startup(function(use)
       { "nvim-treesitter/nvim-treesitter" }
     },
     config = function()
-      require("user.config.refactoring").setup()
+      require("config.refactoring").setup()
     end
   }
   -- Markdown
