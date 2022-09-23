@@ -72,3 +72,11 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+-- Navigator keybindings
+keymap('n', "<A-h>", '<CMD>NavigatorLeft<CR>', opts)
+keymap('n', "<A-l>", '<CMD>NavigatorRight<CR>', opts)
+keymap('n', "<A-k>", '<CMD>NavigatorUp<CR>', opts)
+keymap('n', "<A-j>", '<CMD>NavigatorDown<CR>', opts)
+keymap('n', "<A-p>", '<CMD>NavigatorPrevious<CR>', opts)
+
