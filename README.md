@@ -22,13 +22,8 @@ Open `nvim` and enter the following:
 :checkhealth
 ```
 
-You'll probably notice you don't have support for copy/paste also that python and node haven't been setup
-
-So let's fix that
 
 First we'll fix copy/paste
-
-- On mac `pbcopy` should be builtin
 
 - On Ubuntu
 
@@ -57,16 +52,6 @@ Next we need to install python support (node is optional)
   ```
 ---
 
-**NOTE** make sure you have [node](https://nodejs.org/en/) installed, I recommend a node manager like [fnm](https://github.com/Schniz/fnm).
 
-### Upgrade to latest release
-
-Assuming you [built from source](https://github.com/neovim/neovim/wiki/Building-Neovim#quick-start), `cd` into the folder where you cloned `neovim` and run the following commands. 
-```
-git pull
-make distclean && make CMAKE_BUILD_TYPE=Release
-sudo make install
-nvim -v
-```
 
 
