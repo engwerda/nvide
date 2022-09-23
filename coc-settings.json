@@ -40,6 +40,11 @@
   "python.formatting.provider": "black",
   "pyright.organizeimports.provider": "isort",
   "pyright.testing.provider": "pytest",
+  //Django
+  "htmldjango.formatting.provider": "djhtml",
+  "htmldjango.djhtml.tabWidth": 2,
+  "htmldjango.djhtml.commandPath": "/home/simon/.local/bin/djhtml",
+  "htmldjango.djlint.enableLint": true,
   // Emmet
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
