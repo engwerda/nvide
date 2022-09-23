@@ -134,6 +134,11 @@ return packer.startup(function(use)
 
   -- Git
   use({ "lewis6991/gitsigns.nvim", config = get_config("gitsigns"), commit = "c18e016864c92ecf9775abea1baaa161c28082c3" })
+  use({ 'TimUntersberger/neogit',
+    requires = 'nvim-lua/plenary.nvim',
+    config = function() require('user.config.neogit').setup() end
+  })
+  use({ "kdheepak/lazygit.nvim" })
 
   -- DAP
   use({

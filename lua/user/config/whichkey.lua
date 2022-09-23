@@ -92,12 +92,12 @@ local mappings = {
   a = {
     name = "Coc",
     [";"] = { "<cmd>:call CocAction('format')<CR>", "Format buffer" },
-    a = { "<Plug>(coc-codeaction-selected)", "Code Action" },
-    d = { "<Plug>(coc-definition)", "Go to definition" },
-    y = { "<Plug>(coc-type-definition)", "Go to type definition" },
-    i = { "<Plug>(coc-implentation)", "Go to implentation" },
-    r = { "<Plug>(coc-references)", "Go to reference" },
-    s = { "<cmd>:call CocAction('doHover')<cr>", "Show description" },
+    a = { "<Plug>(coc-codeaction-selected)<CR>", "Code Action" },
+    d = { "<Plug>(coc-definition)<CR>", "Go to definition" },
+    y = { "<Plug>(coc-type-definition)<CR>", "Go to type definition" },
+    i = { "<Plug>(coc-implentation)<CR>", "Go to implentation" },
+    r = { "<Plug>(coc-references)<CR>", "Go to reference" },
+    s = { "<cmd>:call CocAction('doHover')<CR>", "Show description" },
 
   },
 
@@ -126,12 +126,13 @@ local mappings = {
     b = { "<cmd>Telescope buffers<cr>", "Buffers" },
     f = { "<cmd>Telescope find_files<cr>", "Find files", },
     p = { "<cmd>Telescope git_files<cr>", "Find files", },
+    r = { "<cmd>Telescope oldfiles<cr>", "Find files", },
     t = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   },
 
   g = {
     name = "Git",
-    g = { "<cmd>lua _LAZYGIT_TOGGLE()<CR>", "Lazygit" },
+    g = { "<cmd>LazyGit<CR>", "Lazygit" },
     j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
     k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
     l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -261,4 +262,3 @@ local mappings = {
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
-
