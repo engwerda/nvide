@@ -108,7 +108,12 @@ return packer.startup(function(use)
   use({ "github/copilot.vim", config = get_config("copilot") })
 
   -- Coq
-  use { 'neoclide/coc.nvim', config = get_config("coc"), branch = 'release' }
+  use({ 'neoclide/coc.nvim',
+    config = function()
+      require('user.config.coc').setup()
+    end,
+    branch = 'release'
+  })
 
   -- coc snippets
   use({ "rafamadriz/friendly-snippets", commit = "d27a83a363e61009278b6598703a763ce9c8e617" }) -- a bunch of snippets to use
