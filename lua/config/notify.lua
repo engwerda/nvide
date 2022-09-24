@@ -47,6 +47,7 @@ function M.setup()
   local notify = require "notify"
   notify.setup(opts)
   vim.notify = notify
+  require("config.coc-notify")
 end
 
 return M
