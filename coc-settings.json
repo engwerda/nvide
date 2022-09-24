@@ -39,6 +39,7 @@
   "python.linting.pylintEnabled": true,
   "python.formatting.provider": "black",
   "pyright.organizeimports.provider": "isort",
+  "pyright.inlayHints.functionReturnTypes": false,
   "pyright.testing.provider": "pytest",
   //Django
   "htmldjango.formatting.provider": "djhtml",
@@ -96,12 +97,6 @@
       ],
       "args": [
         "--stdio"
-      ]
-    },
-    "lua": {
-      "command": "lua-lsp",
-      "filetypes": [
-        "lua"
       ]
     },
     "nix": {
