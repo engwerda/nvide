@@ -94,6 +94,15 @@ return packer.startup(function(use)
     end
   })
 
+  -- Notify
+
+  use({
+    "rcarriga/nvim-notify",
+    config = function()
+      require("config.notify").setup()
+    end
+  })
+
   -- Terminal and Tmux
   use({ "akinsho/toggleterm.nvim",
     config = get_config("toggleterm"),
