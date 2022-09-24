@@ -57,6 +57,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
     "coc-htmldjango",
     "coc-json",
     "coc-kotlin",
+    "coc-lists",
     "coc-markdown-preview-enhanced",
     "coc-markdownlint",
     "coc-neosnippet",
