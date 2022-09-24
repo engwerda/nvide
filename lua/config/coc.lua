@@ -57,6 +57,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 		"coc-json",
 		"coc-kotlin",
 		"coc-lists",
+		"coc-ltex",
 		"coc-markdown-preview-enhanced",
 		"coc-markdownlint",
 		"coc-neosnippet",
@@ -73,6 +74,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 		"coc-ultisnips",
 		"coc-vetur",
 		"coc-webview",
+		"coc-yank",
 		"coc-yaml",
 	}
 end

@@ -118,5 +118,32 @@
       ]
     }
   },
-  "Lua.telemetry.enable": false
+  "Lua.telemetry.enable": false,
+  "ltex.enabled": [
+    "bibtex",
+    "context",
+    "context.tex",
+    "html",
+    "latex",
+    "markdown",
+    "org",
+    "norg",
+    "restructuredtext",
+    "rsweave",
+    "text"
+  ],
+  "ltex.completionEnabled": true,
+  "cSpell.enabledLanguageIds": [
+    "csharp",
+    "go",
+    "javascript",
+    "javascriptreact",
+    "lua",
+    "php",
+    "text",
+    "python",
+    "typescript",
+    "typescriptreact",
+    "yml"
+  ]
 }
