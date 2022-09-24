@@ -31,10 +31,10 @@ vim.cmd [[
 
   autocmd FileType json syntax match Comment +\/\/.\+$+
 
-]]
+  " Auto save markdown files
+  autocmd FileType markdown set autowriteall
 
--- Autoformat
--- augroup _lsp
---   autocmd!
---   autocmd BufWritePre * lua vim.lsp.buf.formatting()
--- augroup end
+
+  " Save buffer when it becomes hidden
+  autocmd BufLeave * silent! wall
+]]
