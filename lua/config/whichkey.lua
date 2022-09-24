@@ -81,7 +81,6 @@ local opts = {
 local mappings = {
   ["<TAB>"] = { ":b#<cr>", "Last buffer" },
   [";"] = { "<cmd>:call CocAction('format')<CR>", "Format buffer" },
-  ["a"] = { "<cmd>Alpha<cr>", "Alpha" },
   ["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
   ["W"] = { "<cmd>w!<CR>", "Save" },
   ["q"] = { "<cmd>q!<CR>", "Quit" },
@@ -90,15 +89,11 @@ local mappings = {
   ["F"] = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
 
   a = {
-    name = "Coc",
-    [";"] = { "<cmd>:call CocAction('format')<CR>", "Format buffer" },
-    a = { "<Plug>(coc-codeaction-selected)<CR>", "Code Action" },
-    d = { "<Plug>(coc-definition)<CR>", "Go to definition" },
-    y = { "<Plug>(coc-type-definition)<CR>", "Go to type definition" },
-    i = { "<Plug>(coc-implentation)<CR>", "Go to implentation" },
-    r = { "<Plug>(coc-references)<CR>", "Go to reference" },
-    s = { "<cmd>:call CocAction('doHover')<CR>", "Show description" },
-
+    name = "Anything",
+    a = { "<cmd>Alpha<cr>", "Alpha" },
+    c = { "<cmd>Telescope coc coc<cr>", "Coc" },
+    l = { "<cmd>Telescope coc links<cr>", "links" },
+    C = { "<cmd>Telescope coc commands<cr>", "Coc commands" },
   },
 
   b = {
@@ -112,12 +107,6 @@ local mappings = {
     l = { ":ls<CR>", "List buffers" },
     p = { ":bprevious<CR>", "Previous tab" },
     P = { ":BufferLinePick<CR>", "Pick Buffer" },
-  },
-  c = {
-    name = "Code",
-    [";"] = { "<cmd>:call CocAction('format')<CR>", "Format buffer" },
-    c = { "<cmd>call CocActionAsync('codeAction', 'cursor')<cr>", "Action" },
-    C = { "<cmd>Copilot panel<cr>", "Copilot panel" },
   },
 
 
@@ -152,37 +141,28 @@ local mappings = {
       "Diff",
     },
   },
+  G = {
+    name = "Github",
+    C = { "<cmd>Copilot panel<cr>", "Copilot panel" },
 
-  l = {
-    name = "LSP",
-    a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-    d = {
-      "<cmd>Telescope lsp_document_diagnostics<cr>",
-      "Document Diagnostics",
-    },
-    w = {
-      "<cmd>Telescope lsp_workspace_diagnostics<cr>",
-      "Workspace Diagnostics",
-    },
-    f = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", "Format" },
-    i = { "<cmd>LspInfo<cr>", "Info" },
-    I = { "<cmd>LspInstallInfo<cr>", "Installer Info" },
-    j = {
-      "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>",
-      "Next Diagnostic",
-    },
-    k = {
-      "<cmd>lua vim.lsp.diagnostic.goto_prev()<cr>",
-      "Prev Diagnostic",
-    },
-    l = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
-    q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<cr>", "Quickfix" },
-    r = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
-    s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-    S = {
-      "<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-      "Workspace Symbols",
-    },
+  },
+
+  m = {
+    name = "Code",
+    [";"] = { "<cmd>:call CocAction('format')<CR>", "Format buffer" },
+    A = { "<cmd>Telescope coc diagnostics<cr>", "Diagnostics" },
+    a = { "<cmd>Telescope coc code_actions<cr>", "Line Actions" },
+    d = { "<cmd>Telescope coc definitions<cr>", "Definitions" },
+    D = { "<cmd>Telescope coc declarations<cr>", "Declarations" },
+    f = { "<cmd>Telescope coc file_code_actions<cr>", "File Actions" },
+    i = { "<cmd>Telescope coc implementations<cr>", "Implementations" },
+    l = { "<cmd>Telescope coc line_code_actions<cr>", "Line Actions" },
+    r = { "<cmd>Telescope coc references<cr>", "References" },
+    s = { "<cmd>Telescope coc document_symbols<cr>", "Symbols" },
+    S = { "<cmd>CocList snippets<cr>", "Snippets" },
+    t = { "<cmd>Telescope coc type_definitions<cr>", "Definitions" },
+    w = { "<cmd>Telescope coc workspace_symbols<cr>", "Diagnostics" },
+    W = { "<cmd>Telescope coc workspace_diagnostics<cr>", "Diagnostics" },
   },
 
   M = {
@@ -209,6 +189,7 @@ local mappings = {
 
   s = {
     name = "Search",
+    s = { "<cmd>Telescope live_grep theme=ivy<cr>", "Find Text" },
     b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
     c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
     h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
