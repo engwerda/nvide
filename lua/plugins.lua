@@ -144,6 +144,7 @@ return packer.startup(function(use)
     commit = "d96eaa914aab6cfc4adccb34af421bdd496468b0" })
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   use { "nvim-telescope/telescope-file-browser.nvim" }
+  use {'fannheyward/telescope-coc.nvim'}
   use { "sudormrfbin/cheatsheet.nvim",
     requires = {
       { "nvim-telescope/telescope.nvim" },
