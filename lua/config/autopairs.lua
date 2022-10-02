@@ -1,3 +1,8 @@
+local status_ok, autopairs = pcall(require, "nvim-autopairs")
+if not status_ok then
+	return
+end
+
 local remap = vim.api.nvim_set_keymap
 local npairs = require('nvim-autopairs')
 npairs.setup({map_cr=false})

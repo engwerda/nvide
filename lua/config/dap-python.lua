@@ -1,3 +1,8 @@
+local status_ok, dap_python = pcall(require, "dap-python")
+if not status_ok then
+	return
+end
+
 local M = {}
 
 local dap_python = require('dap-python')
