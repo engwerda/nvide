@@ -283,14 +283,15 @@ return packer.startup(function(use)
 
 	-- NeOrg
   -- Wait for  Neovim version 0.8.x
-	-- use({
-	-- 	"nvim-neorg/neorg",
-	-- 	tag = "0.0.14",
-	-- 	config = function()
-	-- 		require("config.neorg").setup()
-	-- 	end,
-	-- 	requires = {"nvim-lua/plenary.nvim"},
-	-- })
+	 use({
+	 	"nvim-neorg/neorg",
+	 	tag = "0.0.15",
+    run = ":Neorg sync-parsers",
+	 	config = function()
+	 		require("config.neorg").setup()
+	 	end,
+	 	requires = {"nvim-lua/plenary.nvim", "nvim-neorg/neorg-telescope", "max397574/neorg-contexts"},
+	 })
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
