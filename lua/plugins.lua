@@ -74,8 +74,8 @@ return packer.startup(function(use)
 	use({
 		"akinsho/bufferline.nvim",
 		config = get_config("bufferline"),
-    tag = "v2.*",
-    requires = 'kyazdani42/nvim-web-devicons'
+		tag = "v2.*",
+		requires = "kyazdani42/nvim-web-devicons",
 	})
 	use({ "moll/vim-bbye" })
 	use({
@@ -144,6 +144,7 @@ return packer.startup(function(use)
 	use("lunarvim/colorschemes")
 	use("Mofiqul/dracula.nvim")
 	use("lunarvim/darkplus.nvim")
+  use { "briones-gabriel/darcula-solid.nvim", requires = "rktjmp/lush.nvim" }
 
 	-- Copilot
 	use({ "github/copilot.vim", config = get_config("copilot") })
@@ -282,16 +283,24 @@ return packer.startup(function(use)
 	use({ "michaelb/sniprun", run = "bash ./install.sh" })
 
 	-- NeOrg
-  -- Wait for  Neovim version 0.8.x
-	 use({
-	 	"nvim-neorg/neorg",
-	 	tag = "0.0.15",
-    run = ":Neorg sync-parsers",
-	 	config = function()
-	 		require("config.neorg").setup()
-	 	end,
-	 	requires = {"nvim-lua/plenary.nvim", "nvim-neorg/neorg-telescope", "max397574/neorg-contexts"},
-	 })
+	use({
+		"nvim-neorg/neorg",
+		tag = "0.0.15",
+		run = ":Neorg sync-parsers",
+		config = function()
+			require("config.neorg").setup()
+		end,
+		requires = { "nvim-lua/plenary.nvim", "nvim-neorg/neorg-telescope", "max397574/neorg-contexts" },
+	})
+
+	-- Zen mode
+	use({
+		"Pocco81/true-zen.nvim",
+    requires = { "folke/twilight.nvim" },
+		config = function()
+			require("true-zen").setup({})
+		end,
+	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
