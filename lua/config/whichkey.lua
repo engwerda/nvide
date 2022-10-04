@@ -114,9 +114,10 @@ local mappings = {
 		name = "Files",
 		b = { "<cmd>Telescope buffers<cr>", "Buffers" },
 		f = { "<cmd>Telescope find_files<cr>", "Find files" },
-		p = { "<cmd>Telescope git_files<cr>", "Find files" },
-		r = { "<cmd>Telescope oldfiles<cr>", "Find files" },
+		p = { "<cmd>Telescope git_files<cr>", "Find project files" },
+		r = { "<cmd>Telescope oldfiles<cr>", "Find recent files" },
 		t = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+		w = { "<Cmd>:Telescope neorg switch_workspace<CR>", "Workspaces" },
 	},
 
 	g = {
@@ -150,8 +151,6 @@ local mappings = {
 			l = { "<cmd>Octo issue list<cr>", "List open issues" },
 			c = { "<cmd>Octo issue create<cr>", "Create issue" },
 			C = { "<cmd>Octo issue close<cr>", "Close issue" },
-			-- e = { "<cmd>Octo issue edit<cr>", "issue" },
-			-- e = { "<cmd>Octo issue <cr>", "issue" },
 		},
 	},
 
@@ -204,12 +203,15 @@ local mappings = {
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
 		h = { "<cmd>Telescope help_tags<cr>", "Find Help" },
+		H = { "<cmd>Telescope highlights<cr>", "Find highlight groups" },
 		M = { "<cmd>Telescope man_pages<cr>", "Man Pages" },
 		r = { "<cmd>Telescope oldfiles<cr>", "Open Recent File" },
 		R = { "<cmd>Telescope registers<cr>", "Registers" },
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 	},
+
+	S = { "<cmd>SnipRun<cr>", "SnipRun" },
 
 	t = {
 		name = "Terminal",
@@ -225,6 +227,9 @@ local mappings = {
 	T = {
 		name = "Toggle",
 		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+    h = { "<cmd>nohlsearch<CR>", "No Highlight" },
+    l = { "<cmd>:set number!<CR>", "Toggle line numbers" },
+    r = { "<cmd>:set relativenumber!<CR>", "Toggle relative line numbers" },
 	},
 
 	w = {
@@ -249,6 +254,17 @@ local mappings = {
 		t = { "<cmd>:WindowsToggleAutowidth<cr>", "Toggle auto width" },
 		m = { "<cmd>:WindowsMaximize<cr>", "Maximize" },
 	},
+  x = {
+    name = "Text",
+    s = {
+      name = "Sort",
+      a = { "<cmd>:sort<cr>", "Sort Ascending" },
+      d = { "<cmd>:sort!<cr>", "Sort Descending" },
+      u = { "<cmd>:sort u<cr>", "Sort Unique" },
+      n = { "<cmd>:sort n<cr>", "Sort Numerically" },
+
+    }
+  }
 }
 
 which_key.setup(setup)
