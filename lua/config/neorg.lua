@@ -92,13 +92,15 @@ local neorg_config = {
 			config = {
 				workspaces = {
 					home = "~/neorg",
-					work = "~/neorg/work",
-					sapphire = "~/neorg/work/sapphire",
-					sam = "~/neorg/work/sam",
-					ntassets = "~/neorg/work/ntassets",
+          journal = "~/neorg/journal",
+          justice_supply_chain = "~/neorg/justice-supply-chain",
 					notes = "~/neorg/notes",
+					ntasset = "~/neorg/ntasset",
+					personal = "~/neorg/personal",
+					sam = "~/neorg/sam",
+					sapphire = "~/neorg/sapphire",
 					snippets = "~/neorg/snippets",
-					gtd = "~/neorg/gtd",
+          tutorials = "~/neorg/tutorials",
 				},
 				index = "index.norg",
 			},
@@ -134,10 +136,10 @@ local neorg_config = {
 			config = {
 				-- workspace =   "example_gtd" , -- assign the workspace,
 				workspace = "home",
-				exclude = { "notes/", "journal" }, -- Optional: all excluded files from the workspace are not part of the gtd workflow
+				exclude = { "notes/", "journal", "snippets", "tutorials" }, -- Optional: all excluded files from the workspace are not part of the gtd workflow
 				projects = {
-					show_completed_projects = false,
-					show_projects_without_tasks = false,
+					show_completed_projects = true,
+					show_projects_without_tasks = true,
 				},
 				custom_tag_completion = true,
 			},
