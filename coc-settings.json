@@ -15,24 +15,13 @@
     "toml",
     "dockerfile",
     "sh",
-    "lua",
     "htmldjango"
   ],
-  "snippets.ultisnips.directories": [
-    "UltiSnips",
-    "~/.config/nvim/utils/snips"
-  ],
+  "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"],
   "diagnostic.refreshOnInsertMode": true,
   "codeLens.enable": true,
   "yank.highlight.duration": 300,
-  "pairs.enableCharacters": [
-    "(",
-    "[",
-    "{",
-    "'",
-    "\"",
-    "`"
-  ],
+  "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
   // Python
   "python.linting.flake8Enabled": true,
   "python.linting.mypyEnabled": true,
@@ -65,12 +54,8 @@
   "languageserver": {
     "sourcery": {
       "command": "/home/simon/.local/bin/sourcery",
-      "args": [
-        "lsp"
-      ],
-      "filetypes": [
-        "python"
-      ],
+      "args": ["lsp"],
+      "filetypes": ["python"],
       "initializationOptions": {
         "extension_version": "coc.vim",
         "editor_version": "vim"
@@ -83,39 +68,22 @@
     },
     "bash": {
       "command": "bash-language-server",
-      "args": [
-        "start"
-      ],
-      "filetypes": [
-        "sh"
-      ]
+      "args": ["start"],
+      "filetypes": ["sh"]
     },
     "dockerfile": {
       "command": "docker-langserver",
-      "filetypes": [
-        "dockerfile"
-      ],
-      "args": [
-        "--stdio"
-      ]
+      "filetypes": ["dockerfile"],
+      "args": ["--stdio"]
     },
     "nix": {
       "command": "rnix-lsp",
-      "filetypes": [
-        "nix"
-      ]
+      "filetypes": ["nix"]
     },
     "sql": {
       "command": "sql-language-server",
-      "args": [
-        "up",
-        "--method",
-        "stdio"
-      ],
-      "filetypes": [
-        "sql",
-        "mysql"
-      ]
+      "args": ["up", "--method", "stdio"],
+      "filetypes": ["sql", "mysql"]
     }
   },
   "Lua.telemetry.enable": false,
@@ -127,7 +95,6 @@
     "latex",
     "markdown",
     "org",
-    "norg",
     "restructuredtext",
     "rsweave",
     "text"
@@ -139,11 +106,16 @@
     "javascript",
     "javascriptreact",
     "lua",
+    "mail",
+    "norg",
     "php",
     "text",
     "python",
     "typescript",
     "typescriptreact",
     "yml"
+  ],
+  "cSpell.userWords": [
+    "ntasset"
   ]
 }
