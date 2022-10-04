@@ -117,6 +117,10 @@ return packer.startup(function(use)
 		end,
 	})
 
+	--[[ Tags ]]
+	use({
+		"liuchengxu/vista.vim",
+	})
 	-- Notify
 
 	use({
@@ -144,7 +148,7 @@ return packer.startup(function(use)
 	use("lunarvim/colorschemes")
 	use("Mofiqul/dracula.nvim")
 	use("lunarvim/darkplus.nvim")
-  use { "briones-gabriel/darcula-solid.nvim", requires = "rktjmp/lush.nvim" }
+	use({ "briones-gabriel/darcula-solid.nvim", requires = "rktjmp/lush.nvim" })
 
 	-- Copilot
 	use({ "github/copilot.vim", config = get_config("copilot") })
@@ -296,7 +300,7 @@ return packer.startup(function(use)
 	-- Zen mode
 	use({
 		"Pocco81/true-zen.nvim",
-    requires = { "folke/twilight.nvim" },
+		requires = { "folke/twilight.nvim" },
 		config = function()
 			require("true-zen").setup({})
 		end,

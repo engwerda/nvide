@@ -168,6 +168,7 @@ local mappings = {
 		s = { "<cmd>Telescope coc document_symbols<cr>", "Symbols" },
 		S = { "<cmd>CocList snippets<cr>", "Snippets" },
 		t = { "<cmd>Telescope coc type_definitions<cr>", "Definitions" },
+		T = { "<cmd>vista!!<cr>", "Show tags" },
 		w = { "<cmd>Telescope coc workspace_symbols<cr>", "Diagnostics" },
 		W = { "<cmd>Telescope coc workspace_diagnostics<cr>", "Diagnostics" },
 	},
@@ -230,6 +231,7 @@ local mappings = {
     h = { "<cmd>nohlsearch<CR>", "No Highlight" },
     l = { "<cmd>:set number!<CR>", "Toggle line numbers" },
     r = { "<cmd>:set relativenumber!<CR>", "Toggle relative line numbers" },
+		t = { "<cmd>vista!!<cr>", "Show tags" },
 	},
 
 	w = {
