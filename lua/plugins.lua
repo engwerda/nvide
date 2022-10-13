@@ -117,7 +117,19 @@ return packer.startup(function(use)
 		end,
 	})
 
-	--[[ Tags ]]
+
+  -- Motion
+  use {
+  "phaazon/hop.nvim",
+  branch = 'v2', -- optional but strongly recommended
+  config = function()
+    -- you can configure Hop the way you like here; see :h hop-config
+    require("config.hop").setup()
+  end
+}
+  use({"matze/vim-move"})
+
+	-- Tags 
 	use({
 		"liuchengxu/vista.vim",
 	})
