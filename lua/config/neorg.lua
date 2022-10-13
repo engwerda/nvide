@@ -96,7 +96,6 @@ local neorg_config = {
           justice_supply_chain = "~/neorg/justice-supply-chain",
 					notes = "~/neorg/notes",
 					ntasset = "~/neorg/ntasset",
-					personal = "~/neorg/personal",
 					sam = "~/neorg/sam",
 					sapphire = "~/neorg/sapphire",
 					snippets = "~/neorg/snippets",

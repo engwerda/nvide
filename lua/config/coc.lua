@@ -48,6 +48,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 		"coc-cssmodules",
 		"coc-dictionary",
 		"coc-docker",
+    "coc-elixir",
 		"coc-emmet",
 		"coc-emoji",
 		"coc-eslint",
