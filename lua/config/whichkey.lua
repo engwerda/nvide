@@ -80,6 +80,7 @@ local opts = {
 
 local mappings = {
 	["<TAB>"] = { ":b#<cr>", "Last buffer" },
+	["\\"] = { "<cmd>:ToggleTermSendCurrentLine<CR>", "Send current line to terminal" },
 	[";"] = { "<cmd>:call CocAction('format')<CR>", "Format buffer" },
 	["e"] = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 	["W"] = { "<cmd>w!<CR>", "Save" },
@@ -95,6 +96,15 @@ local mappings = {
 		c = { "<cmd>Telescope coc coc<cr>", "Coc" },
 		l = { "<cmd>Telescope coc links<cr>", "links" },
 		C = { "<cmd>Telescope coc commands<cr>", "Coc commands" },
+
+	  p = {
+		  name = "Packer",
+		c = { "<cmd>PackerCompile<cr>", "Compile" },
+		i = { "<cmd>PackerInstall<cr>", "Install" },
+		s = { "<cmd>PackerSync<cr>", "Sync" },
+		S = { "<cmd>PackerStatus<cr>", "Status" },
+		u = { "<cmd>PackerUpdate<cr>", "Update" },
+	  },
 	},
 
 	b = {
@@ -186,14 +196,6 @@ local mappings = {
 		f = { "<cmd>Telescope git_files<cr>", "Find files" },
 	},
 
-	P = {
-		name = "Packer",
-		c = { "<cmd>PackerCompile<cr>", "Compile" },
-		i = { "<cmd>PackerInstall<cr>", "Install" },
-		s = { "<cmd>PackerSync<cr>", "Sync" },
-		S = { "<cmd>PackerStatus<cr>", "Status" },
-		u = { "<cmd>PackerUpdate<cr>", "Update" },
-	},
 
 	s = {
 		name = "Search",
@@ -216,13 +218,15 @@ local mappings = {
 
 	t = {
 		name = "Terminal",
+		A = { "<cmd>ToggleTermToggleAll<cr>", "Toggle all" },
+		i = { "<cmd>lua _IPYTHON_TOGGLE()<cr>", "Ipython" },
 		n = { "<cmd>lua _NODE_TOGGLE()<cr>", "Node" },
 		u = { "<cmd>lua _NCDU_TOGGLE()<cr>", "NCDU" },
-		t = { "<cmd>lua _HTOP_TOGGLE()<cr>", "Htop" },
 		p = { "<cmd>lua _PYTHON_TOGGLE()<cr>", "Python" },
 		f = { "<cmd>ToggleTerm direction=float<cr>", "Float" },
-		h = { "<cmd>ToggleTerm size=10 direction=horizontal<cr>", "Horizontal" },
+		h = { "<cmd>ToggleTerm size=40 direction=horizontal<cr>", "Horizontal" },
 		v = { "<cmd>ToggleTerm size=80 direction=vertical<cr>", "Vertical" },
+		t = { "<cmd>ToggleTerm direction=tab<cr>", "Tab" },
 	},
 
 	T = {
