@@ -9,6 +9,7 @@ local wk = require("which-key")
 
 local function set_keymaps()
 	wk.register({
+	["\\"] = { "<cmd>:ToggleTermSendVisualLines<CR>", "Send selected lines to terminal" },
 		h = { "<gv", "Move text left" },
 		l = { ">gv", "Move text right" },
 		k = { ":move '>-2<CR>gv-gv", "Move text up (broken)" },
