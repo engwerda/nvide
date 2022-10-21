@@ -1,21 +1,22 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
-    "python",
-    "markdown",
-    "javascript",
-    "json",
-    "html",
     "css",
+    "dockerfile",
+    "elixir",
+    "html",
+    "htmldjango",
+    "javascript",
+    "javascriptreact",
+    "json",
+    "markdown",
+    "python",
     "scss",
+    "sh",
+    "toml",
     "typescript",
     "typescriptreact",
-    "javascriptreact",
     "vue",
-    "yaml",
-    "toml",
-    "dockerfile",
-    "sh",
-    "htmldjango"
+    "yaml"
   ],
   "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"],
   "diagnostic.refreshOnInsertMode": true,
@@ -27,10 +28,13 @@
   "python.linting.mypyEnabled": true,
   "python.linting.pylintEnabled": true,
   "python.formatting.provider": "black",
+  "python.formatting.blackPath": "~/.local/bin/black",
   "pyright.organizeimports.provider": "isort",
-  "pyright.inlayHints.functionReturnTypes": false,
+  "pyright.inlayHints.functionReturnTypes": true,
   "pyright.testing.provider": "pytest",
-  //Django
+  "pydocstring.enable": true,
+  "pydocstring.docstringFormat": "numpy",
+  // Django
   "htmldjango.formatting.provider": "djhtml",
   "htmldjango.djhtml.tabWidth": 2,
   "htmldjango.djhtml.commandPath": "/home/simon/.local/bin/djhtml",
@@ -51,6 +55,7 @@
   "html-css-support.styleSheets": [
     "https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
   ],
+  "elixir.pathToElixirLS": "/usr/bin/elixir-ls",
   "languageserver": {
     "sourcery": {
       "command": "/home/simon/.local/bin/sourcery",
@@ -100,6 +105,8 @@
     "text"
   ],
   "ltex.completionEnabled": true,
+  "cSpellExt.enableDictionaries": ["dutch"],
+  "cSpell.language": "en,nl",
   "cSpell.enabledLanguageIds": [
     "csharp",
     "go",
@@ -109,13 +116,18 @@
     "mail",
     "norg",
     "php",
-    "text",
     "python",
+    "text",
     "typescript",
     "typescriptreact",
     "yml"
   ],
   "cSpell.userWords": [
+    "Exercism",
+    "Moonlander",
+    "Nakharin",
+    "Pytest",
+    "noqa",
     "ntasset"
   ]
 }
