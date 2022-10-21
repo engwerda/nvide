@@ -266,6 +266,10 @@ return packer.startup(function(use)
 			require("config.refactoring").setup()
 		end,
 	})
+  use({
+  'python-rope/ropevim',
+  ft = "python"
+})
 	-- Markdown
 	use({
 		"iamcco/markdown-preview.nvim",
