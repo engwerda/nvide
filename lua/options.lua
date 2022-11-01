@@ -32,7 +32,7 @@ local options = {
   wrap = false,                            -- display lines as one long line
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
-  guifont = "FiraCode Nerd :h15",               -- the font used in graphical neovim applications
+  guifont = "Fira Code Nerd Font:h15",               -- the font used in graphical neovim applications
 }
 
 vim.opt.shortmess:append "c"
@@ -44,3 +44,7 @@ end
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
+
+vim.g.neovide_fullscreen = false
+vim.g.neovide_no_idle = true
+
