@@ -60,7 +60,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 		"coc-json",
 		"coc-kotlin",
 		"coc-lists",
-		"coc-ltex",
+		--[[ "coc-ltex", ]]
 		"coc-markdown-preview-enhanced",
 		"coc-markdownlint",
 		"coc-neosnippet",
