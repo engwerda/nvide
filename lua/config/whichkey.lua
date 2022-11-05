@@ -97,14 +97,14 @@ local mappings = {
 		l = { "<cmd>Telescope coc links<cr>", "links" },
 		C = { "<cmd>Telescope coc commands<cr>", "Coc commands" },
 
-	  p = {
-		  name = "Packer",
-		c = { "<cmd>PackerCompile<cr>", "Compile" },
-		i = { "<cmd>PackerInstall<cr>", "Install" },
-		s = { "<cmd>PackerSync<cr>", "Sync" },
-		S = { "<cmd>PackerStatus<cr>", "Status" },
-		u = { "<cmd>PackerUpdate<cr>", "Update" },
-	  },
+		p = {
+			name = "Packer",
+			c = { "<cmd>PackerCompile<cr>", "Compile" },
+			i = { "<cmd>PackerInstall<cr>", "Install" },
+			s = { "<cmd>PackerSync<cr>", "Sync" },
+			S = { "<cmd>PackerStatus<cr>", "Status" },
+			u = { "<cmd>PackerUpdate<cr>", "Update" },
+		},
 	},
 
 	b = {
@@ -132,7 +132,8 @@ local mappings = {
 
 	g = {
 		name = "Git",
-		g = { "<cmd>LazyGit<CR>", "Lazygit" },
+		g = { "<cmd>Neogit<CR>", "Neogit" },
+		G = { "<cmd>LazyGit<CR>", "Lazygit" },
 		j = { "<cmd>lua require 'gitsigns'.next_hunk()<cr>", "Next Hunk" },
 		k = { "<cmd>lua require 'gitsigns'.prev_hunk()<cr>", "Prev Hunk" },
 		l = { "<cmd>lua require 'gitsigns'.blame_line()<cr>", "Blame" },
@@ -148,8 +149,13 @@ local mappings = {
 		b = { "<cmd>Telescope git_branches<cr>", "Checkout branch" },
 		c = { "<cmd>Telescope git_commits<cr>", "Checkout commit" },
 		d = {
-			"<cmd>Gitsigns diffthis HEAD<cr>",
-			"Diff",
+			name = "Diff",
+      c = { "<cmd>DiffviewClose<cr>", "Close" },
+      d = { "<cmd>DiffviewOpen<cr>", "Diff" },
+			f = {
+				"<cmd>DiffviewFileHistory<cr>",
+				"Diff current file",
+			},
 		},
 	},
 	G = {
@@ -196,7 +202,6 @@ local mappings = {
 		f = { "<cmd>Telescope git_files<cr>", "Find files" },
 	},
 
-
 	s = {
 		name = "Search",
 		s = { "<cmd>Telescope live_grep<cr>", "Find Text" },
@@ -232,9 +237,9 @@ local mappings = {
 	T = {
 		name = "Toggle",
 		c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
-    h = { "<cmd>nohlsearch<CR>", "No Highlight" },
-    l = { "<cmd>:set number!<CR>", "Toggle line numbers" },
-    r = { "<cmd>:set relativenumber!<CR>", "Toggle relative line numbers" },
+		h = { "<cmd>nohlsearch<CR>", "No Highlight" },
+		l = { "<cmd>:set number!<CR>", "Toggle line numbers" },
+		r = { "<cmd>:set relativenumber!<CR>", "Toggle relative line numbers" },
 		t = { "<cmd>vista!!<cr>", "Show tags" },
 	},
 
@@ -260,22 +265,19 @@ local mappings = {
 		t = { "<cmd>:WindowsToggleAutowidth<cr>", "Toggle auto width" },
 		m = { "<cmd>:WindowsMaximize<cr>", "Maximize" },
 	},
-  x = {
-    name = "Text",
-    s = {
-      name = "Sort",
-      a = { "<cmd>:sort<cr>", "Sort Ascending" },
-      d = { "<cmd>:sort!<cr>", "Sort Descending" },
-      u = { "<cmd>:sort u<cr>", "Sort Unique" },
-      n = { "<cmd>:sort n<cr>", "Sort Numerically" },
-
-    }
-  }
+	x = {
+		name = "Text",
+		s = {
+			name = "Sort",
+			a = { "<cmd>:sort<cr>", "Sort Ascending" },
+			d = { "<cmd>:sort!<cr>", "Sort Descending" },
+			u = { "<cmd>:sort u<cr>", "Sort Unique" },
+			n = { "<cmd>:sort n<cr>", "Sort Numerically" },
+		},
+	},
 }
 
 which_key.setup(setup)
 which_key.register(mappings, opts)
 
-
 require("config.visual-keybindings").setup()
-
