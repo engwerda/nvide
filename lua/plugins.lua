@@ -117,19 +117,18 @@ return packer.startup(function(use)
 		end,
 	})
 
+	-- Motion
+	use({
+		"phaazon/hop.nvim",
+		branch = "v2", -- optional but strongly recommended
+		config = function()
+			-- you can configure Hop the way you like here; see :h hop-config
+			require("config.hop").setup()
+		end,
+	})
+	use({ "matze/vim-move" })
 
-  -- Motion
-  use {
-  "phaazon/hop.nvim",
-  branch = 'v2', -- optional but strongly recommended
-  config = function()
-    -- you can configure Hop the way you like here; see :h hop-config
-    require("config.hop").setup()
-  end
-}
-  use({"matze/vim-move"})
-
-	-- Tags 
+	-- Tags
 	use({
 		"liuchengxu/vista.vim",
 	})
@@ -156,7 +155,7 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 
-	use({ "folke/tokyonight.nvim" })
+	use("folke/tokyonight.nvim")
 	use("lunarvim/colorschemes")
 	use("Mofiqul/dracula.nvim")
 	use("lunarvim/darkplus.nvim")
@@ -225,7 +224,7 @@ return packer.startup(function(use)
 			require("octo").setup()
 		end,
 	})
-  use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+	use({ "sindrets/diffview.nvim", requires = "nvim-lua/plenary.nvim" })
 
 	-- DAP
 	use({
@@ -267,10 +266,10 @@ return packer.startup(function(use)
 			require("config.refactoring").setup()
 		end,
 	})
-  use({
-  'python-rope/ropevim',
-  ft = "python"
-})
+	use({
+		"python-rope/ropevim",
+		ft = "python",
+	})
 	-- Markdown
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -279,6 +278,7 @@ return packer.startup(function(use)
 		end,
 	})
 	use({ "ellisonleao/glow.nvim" })
+	use({ "jxnblk/vim-mdx-js" })
 
 	-- Note taking
 	use({
@@ -306,7 +306,7 @@ return packer.startup(function(use)
 	-- NeOrg
 	use({
 		"nvim-neorg/neorg",
-		tag = "0.0.15",
+		tag = "0.0.18",
 		run = ":Neorg sync-parsers",
 		config = function()
 			require("config.neorg").setup()
@@ -321,6 +321,31 @@ return packer.startup(function(use)
 		config = function()
 			require("true-zen").setup({})
 		end,
+	})
+
+	-- ChatGPT
+	use({
+		"jackMort/ChatGPT.nvim",
+		config = function()
+			require("config.chatgpt").setup({
+				-- optional configuration
+			})
+		end,
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+		},
+	})
+	use({
+		"dense-analysis/neural",
+		config = function()
+			require("config.neural").setup({})
+		end,
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"ElPiloto/significant.nvim",
+		},
 	})
 
 	-- Automatically set up your configuration after cloning packer.nvim
