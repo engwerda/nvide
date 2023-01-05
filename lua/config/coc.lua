@@ -74,6 +74,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 		"coc-stylua",
 		"coc-sumneko-lua",
 		"coc-tabnine",
+    "@yaegassy/coc-tailwindcss3",
 		"coc-toml",
 		"coc-tsserver",
 		"coc-ultisnips",
