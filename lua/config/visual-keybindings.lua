@@ -15,6 +15,15 @@ local function set_keymaps()
 		k = { ":move '>-2<CR>gv-gv", "Move text up (broken)" },
 		j = { ":move '>+1<CR>gv-gv", "Move text down" },
 		p = { '"_dP', "paste in place" },
+  c = {
+    name = "AI",
+    a = { "<cmd>:ChatGPTActAs<cr>", "Act as prompt" },
+    d = { "<cmd>:NeuralCode add documentation<cr>", "Add documentation" },
+    e = { "<cmd>:ChatGPTEditWithInstructions<cr>", "Edit With Instructions" },
+    p = { "<cmd>:NeuralPrompt<cr>", "Neural Prompt" },
+    P = { "<cmd>:ChatGPT<cr>", "GPT-3 prompt" },
+    s = { "<cmd>:NeuralText Fix spelling and grammar and rephrase in a professional tone<cr>", "Fix spelling and grammar" },
+  },
 		x = {
 			name = "Text",
 			["<"] = { "<gv", "Move text left" },

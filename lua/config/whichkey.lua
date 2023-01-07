@@ -113,12 +113,21 @@ local mappings = {
 		b = { "<cmd>Telescope buffers<cr>", "Buffers" },
 		d = { ":bd<CR>", "Kill buffer" },
 		D = { ":bd!<CR>", "Kill buffer discard any changes" },
-		f = { "<cmd>Telescope find_files<cr>", "Find files" },
+		fCode = { "<cmd>Telescope find_files<cr>", "Find files" },
 		n = { ":bnext<CR>", "Next tab" },
 		l = { ":ls<CR>", "List buffers" },
 		p = { ":bprevious<CR>", "Previous tab" },
 		P = { ":BufferLinePick<CR>", "Pick Buffer" },
 	},
+  c = {
+    name = "AI",
+    a = { "<cmd>:ChatGPTActAs<cr>", "Act as prompt" },
+    d = { "<cmd>:NeuralCode add documentation<cr>", "Add documentation" },
+    e = { "<cmd>:ChatGPTEditWithInstructions<cr>", "Edit With Instructions" },
+    p = { "<cmd>:NeuralPrompt<cr>", "Neural Prompt" },
+    P = { "<cmd>:ChatGPT<cr>", "GPT-3 prompt" },
+    s = { "<cmd>:NeuralText Fix spelling and grammar and rephrase in a professional tone<cr>", "Fix spelling and grammar" },
+  },
 
 	f = {
 		name = "Files",
