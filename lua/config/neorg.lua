@@ -128,21 +128,21 @@ local neorg_config = {
 			},
 		},
 
-		["core.gtd.helpers"] = {},
-		["core.gtd.ui"] = {},
-		["core.gtd.queries"] = {},
-		["core.gtd.base"] = {
-			config = {
-				-- workspace =   "example_gtd" , -- assign the workspace,
-				workspace = "home",
-				exclude = { "notes/", "journal", "snippets", "tutorials" }, -- Optional: all excluded files from the workspace are not part of the gtd workflow
-				projects = {
-					show_completed_projects = true,
-					show_projects_without_tasks = true,
-				},
-				custom_tag_completion = true,
-			},
-		},
+		--[[ ["core.gtd.helpers"] = {}, ]]
+		--[[ ["core.gtd.ui"] = {}, ]]
+		--[[ ["core.gtd.queries"] = {}, ]]
+		--[[ ["core.gtd.base"] = { ]]
+		--[[ 	config = { ]]
+		--[[ 		-- workspace =   "example_gtd" , -- assign the workspace, ]]
+		--[[ 		workspace = "home", ]]
+		--[[ 		exclude = { "notes/", "journal", "snippets", "tutorials" }, -- Optional: all excluded files from the workspace are not part of the gtd workflow ]]
+		--[[ 		projects = { ]]
+		--[[ 			show_completed_projects = true, ]]
+		--[[ 			show_projects_without_tasks = true, ]]
+		--[[ 		}, ]]
+		--[[ 		custom_tag_completion = true, ]]
+		--[[ 	}, ]]
+		--[[ }, ]]
 		["core.norg.manoeuvre"] = {},
 		["core.norg.qol.toc"] = {
 			config = {
