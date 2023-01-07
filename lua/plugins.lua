@@ -116,6 +116,11 @@ return packer.startup(function(use)
 			require("config.illuminate").setup()
 		end,
 	})
+  -- Template language support 
+  -- Jinja2 and Nunjucks support
+  use({
+    "Glench/Vim-Jinja2-Syntax",
+  })
 
 	-- Motion
 	use({
@@ -306,7 +311,7 @@ return packer.startup(function(use)
 	-- NeOrg
 	use({
 		"nvim-neorg/neorg",
-		tag = "0.0.18",
+		tag = "v1.0.1",
 		run = ":Neorg sync-parsers",
 		config = function()
 			require("config.neorg").setup()
