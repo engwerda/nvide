@@ -27,15 +27,15 @@ local function set_keymaps()
 				e = { "<Cmd>Neorg keybind norg core.gtd.base.edit<CR>", "Edit" },
 				t = { "<Cmd>:Telescope neorg find_project_tasks<CR>", "Find project tasks" },
 			},
-      j = {
-        name = "Journal",
-        c = { "<Cmd>Neorg journal custom<CR>", "Custom date" },
-        t = { "<Cmd>Neorg journal today<CR>", "Today" },
-        T = { "<Cmd>Neorg journal tomorrow<CR>", "Tomorrow" },
-        y = { "<Cmd>Neorg journal yesterday<CR>", "Yesterday" },
-        u = { "<Cmd>Neorg journal toc update<CR>", "TOC update" },
-        o = { "<Cmd>Neorg journal toc open<CR>", "TOC open" },
-      },
+			j = {
+				name = "Journal",
+				c = { "<Cmd>Neorg journal custom<CR>", "Custom date" },
+				t = { "<Cmd>Neorg journal today<CR>", "Today" },
+				T = { "<Cmd>Neorg journal tomorrow<CR>", "Tomorrow" },
+				y = { "<Cmd>Neorg journal yesterday<CR>", "Yesterday" },
+				u = { "<Cmd>Neorg journal toc update<CR>", "TOC update" },
+				o = { "<Cmd>Neorg journal toc open<CR>", "TOC open" },
+			},
 			L = { "<Cmd>Neorg keybind norg core.looking-glass.magnify-code-block<CR>", "Magnify code block" },
 			l = {
 				name = "Links",
@@ -87,19 +87,24 @@ local neorg_config = {
 	-- Tell Neorg what modules to load
 	load = {
 		["core.defaults"] = {}, -- Load all the default modules
+		["core.norg.news"] = {
+			config = {
+				check_news = false,
+			},
+		},
 		--[[ ["core.norg.completion"] = {}, ]]
 		["core.norg.dirman"] = { -- Manage your directories with Neorg
 			config = {
 				workspaces = {
 					home = "~/neorg",
-          journal = "~/neorg/journal",
-          justice_supply_chain = "~/neorg/justice-supply-chain",
+					journal = "~/neorg/journal",
+					justice_supply_chain = "~/neorg/justice-supply-chain",
 					notes = "~/neorg/notes",
 					ntasset = "~/neorg/ntasset",
 					sam = "~/neorg/sam",
 					sapphire = "~/neorg/sapphire",
 					snippets = "~/neorg/snippets",
-          tutorials = "~/neorg/tutorials",
+					tutorials = "~/neorg/tutorials",
 				},
 				index = "index.norg",
 			},
