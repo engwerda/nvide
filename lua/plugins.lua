@@ -116,11 +116,18 @@ return packer.startup(function(use)
 			require("config.illuminate").setup()
 		end,
 	})
-  -- Template language support 
-  -- Jinja2 and Nunjucks support
-  use({
-    "Glench/Vim-Jinja2-Syntax",
-  })
+	use({
+		"kevinhwang91/nvim-ufo",
+		requires = "kevinhwang91/promise-async",
+		config = function()
+			require("config.ufo").setup()
+		end,
+	})
+	-- Template language support
+	-- Jinja2 and Nunjucks support
+	--[[ use({ ]]
+	--[[   "Glench/Vim-Jinja2-Syntax", ]]
+	--[[ }) ]]
 
 	-- Motion
 	use({
@@ -139,12 +146,12 @@ return packer.startup(function(use)
 	})
 	-- Notify
 
-	use({
-		"rcarriga/nvim-notify",
-		config = function()
-			require("config.notify").setup()
-		end,
-	})
+	--[[ use({ ]]
+	--[[ 	"rcarriga/nvim-notify", ]]
+	--[[ 	config = function() ]]
+	--[[ 		require("config.notify").setup() ]]
+	--[[ 	end, ]]
+	--[[ }) ]]
 
 	-- Terminal and Tmux
 	use({
@@ -160,11 +167,27 @@ return packer.startup(function(use)
 
 	-- Colorschemes
 
-	use("folke/tokyonight.nvim")
-	use("lunarvim/colorschemes")
-	use("Mofiqul/dracula.nvim")
-	use("lunarvim/darkplus.nvim")
-	use({ "briones-gabriel/darcula-solid.nvim", requires = "rktjmp/lush.nvim" })
+	-- use("folke/tokyonight.nvim")
+	-- use("lunarvim/colorschemes")
+	-- use("Mofiqul/dracula.nvim")
+	-- use("lunarvim/darkplus.nvim")
+	-- use({ "briones-gabriel/darcula-solid.nvim", requires = "rktjmp/lush.nvim" })
+	use({
+		"ray-x/starry.nvim",
+		lazy = false, -- make sure we load this during startup if it is your main colorscheme
+		priority = 1000, -- make sure to load this before all the other start plugins
+		setup = function()
+			vim.g.starry_italic_comments = true
+			vim.g.starry_italic_keywords = true
+			vim.g.starry_italic_functions = false
+			vim.g.starry_italic_variables = false
+			vim.g.starry_italic_string = false
+			vim.g.starry_italic_boolean = true
+			vim.g.starry_darker_contrast = true
+			vim.g.tarry_style = "moonlight"
+			vim.cmd([[colorscheme dracula]])
+		end,
+	})
 
 	-- Copilot
 	use({ "github/copilot.vim", config = get_config("copilot") })
@@ -285,12 +308,29 @@ return packer.startup(function(use)
 	use({ "ellisonleao/glow.nvim" })
 	use({ "jxnblk/vim-mdx-js" })
 
+	-- color highlighter for Neovim
+	use({
+		"norcalli/nvim-colorizer.lua",
+		config = function()
+			require("colorizer").setup()
+		end,
+	})
+
 	-- Note taking
 	use({
 		"jakewvincent/mkdnflow.nvim",
 		rocks = "luautf8", -- Ensures optional luautf8 dependency is installed
 		config = function()
 			require("mkdnflow").setup({})
+		end,
+	})
+
+	-- Scratch files
+	use({
+		"Sonicfury/scretch.nvim",
+		requires = "nvim-telescope/telescope.nvim",
+		config = function()
+			require("scretch").setup({})
 		end,
 	})
 
@@ -309,15 +349,15 @@ return packer.startup(function(use)
 	use({ "michaelb/sniprun", run = "bash ./install.sh" })
 
 	-- NeOrg
-	use({
-		"nvim-neorg/neorg",
-		tag = "v1.0.1",
-		run = ":Neorg sync-parsers",
-		config = function()
-			require("config.neorg").setup()
-		end,
-		requires = { "nvim-lua/plenary.nvim", "nvim-neorg/neorg-telescope", "max397574/neorg-contexts" },
-	})
+	-- use({
+	-- 	"nvim-neorg/neorg",
+	-- 	tag = "v1.0.1",
+	-- 	run = ":Neorg sync-parsers",
+	-- 	config = function()
+	-- 		require("config.neorg").setup()
+	-- 	end,
+	-- 	requires = { "nvim-lua/plenary.nvim", "nvim-neorg/neorg-telescope", "max397574/neorg-contexts" },
+	-- })
 
 	-- Zen mode
 	use({
@@ -350,8 +390,16 @@ return packer.startup(function(use)
 		requires = {
 			"MunifTanjim/nui.nvim",
 			"ElPiloto/significant.nvim",
+			"dense-analysis/ale",
 		},
 	})
+	--[[ use ({  ]]
+	--[[   'codota/tabnine-nvim', ]]
+	--[[   run = "./dl_binaries.sh", ]]
+	--[[   config = function() ]]
+	--[[     require("config.tabnine").setup() ]]
+	--[[   end, ]]
+	--[[ }) ]]
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins

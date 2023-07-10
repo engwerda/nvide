@@ -46,4 +46,5 @@ vim.cmd [[
 
   autocmd BufNewFile,BufRead *.jinja2,*.j2,*.jinja,*.nunjucks,*.nunjs,*.njk set ft=jinja
 
+  autocmd FileType python highlight pythonDocstring gui=italic guifg=#808080
 ]]

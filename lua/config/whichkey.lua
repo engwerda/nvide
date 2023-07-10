@@ -3,6 +3,7 @@ if not status_ok then
 	return
 end
 
+
 local setup = {
 	plugins = {
 		marks = true, -- shows a list of your marks on ' and `
@@ -133,7 +134,8 @@ local mappings = {
 		name = "Files",
 		b = { "<cmd>Telescope buffers<cr>", "Buffers" },
 		f = { "<cmd>Telescope find_files<cr>", "Find files" },
-		p = { "<cmd>Telescope git_files<cr>", "Find project files" },
+		g = { "<cmd>Telescope git_files<cr>", "Find git files" },
+		p = { "<cmd>Telescope find_files<cr>", "Find project files" },
 		r = { "<cmd>Telescope oldfiles<cr>", "Find recent files" },
 		t = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
 		w = { "<Cmd>:Telescope neorg switch_workspace<CR>", "Workspaces" },
@@ -227,9 +229,15 @@ local mappings = {
 		k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
 		C = { "<cmd>Telescope commands<cr>", "Commands" },
 	},
-
-	S = { "<cmd>SnipRun<cr>", "SnipRun" },
-
+  S = {
+    name = "Scratch (scretch)",
+    n = { "<cmd>Scretch new<cr>", "New scretch" },
+    N = { "<cmd>Scretch new_named<cr>", "Named scretch" },
+    l = { "<cmd>Scretch last<cr>", "Last scretch" },
+    s = { "<cmd>Scretch search<cr>", "Search scretch" },
+    g = { "<cmd>Scretch grep<cr>", "Scretch grep" },
+    e = { "<cmd>Scretch explore<cr>", "Scretch explore" },
+  },
 	t = {
 		name = "Terminal",
 		A = { "<cmd>ToggleTermToggleAll<cr>", "Toggle all" },
@@ -250,6 +258,7 @@ local mappings = {
 		l = { "<cmd>:set number!<CR>", "Toggle line numbers" },
 		r = { "<cmd>:set relativenumber!<CR>", "Toggle relative line numbers" },
 		t = { "<cmd>vista!!<cr>", "Show tags" },
+		w = { "<cmd>:set wrap!<CR>", "Toggle line wraps" },
 	},
 
 	w = {

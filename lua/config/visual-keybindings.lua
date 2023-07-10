@@ -18,11 +18,9 @@ local function set_keymaps()
   c = {
     name = "AI",
     a = { "<cmd>:ChatGPTActAs<cr>", "Act as prompt" },
-    d = { "<cmd>:NeuralCode add documentation<cr>", "Add documentation" },
     e = { "<cmd>:ChatGPTEditWithInstructions<cr>", "Edit With Instructions" },
-    p = { "<cmd>:NeuralPrompt<cr>", "Neural Prompt" },
-    P = { "<cmd>:ChatGPT<cr>", "GPT-3 prompt" },
-    s = { "<cmd>:NeuralText Fix spelling and grammar and rephrase in a professional tone<cr>", "Fix spelling and grammar" },
+    P = { "<cmd>:ChatGPT<cr>", "GPT prompt" },
+    r = { "<cmd>:ChatGPTRun", "Run GPT action" },
   },
 		x = {
 			name = "Text",

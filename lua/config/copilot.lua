@@ -22,5 +22,5 @@ vim.g.copilot_no_tab_map = true
 -- <Plug>(copilot-previous)
 
 
-vim.cmd[[highlight CopilotSuggestion guifg=#bfbfbf ctermfg=8]]
+vim.cmd[[highlight CopilotSuggestion guifg=#ede9e9  ctermfg=8]]
 

@@ -22,22 +22,25 @@
   "diagnostic.refreshOnInsertMode": true,
   "codeLens.enable": true,
   "yank.highlight.duration": 300,
-  "pairs.enableCharacters": ["(", "[", "{", "'", "\"", "`"],
   // Python
-  "python.linting.flake8Enabled": true,
-  "python.linting.mypyEnabled": true,
-  "python.linting.pylintEnabled": true,
+  "pyright.enable": true,
+  "python.linting.enabled": false,
+  "python.linting.flake8Enabled": false,
+  "python.linting.mypyEnabled": false,
+  "python.linting.pylintEnabled": false,
+  "python.linting.ruffEnabled": false,
+  "python.linting.pycodestyleEnabled": false,
+  "python.linting.ruffPath": "~/.local/bin/ruff",
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/.local/bin/black",
   "pyright.organizeimports.provider": "isort",
   "pyright.inlayHints.functionReturnTypes": true,
   "pyright.testing.provider": "pytest",
-  "pydocstring.enable": true,
-  "pydocstring.docstringFormat": "numpy",
+  "ruff.enable": true,
+  "ruff.autoFixOnSave": false,
   // Django
   "htmldjango.formatting.provider": "djhtml",
   "htmldjango.djhtml.tabWidth": 2,
-  "htmldjango.djhtml.commandPath": "/home/simon/.local/bin/djhtml",
   "htmldjango.djlint.enableLint": true,
   // Emmet
   "emmet.includeLanguages": {
@@ -56,6 +59,8 @@
     "https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
   ],
   "elixir.pathToElixirLS": "/usr/bin/elixir-ls",
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.headwind.runOnSave": true,
   "languageserver": {
     "sourcery": {
       "command": "/home/simon/.local/bin/sourcery",

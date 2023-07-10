@@ -47,3 +47,6 @@ package-lock.json
 package.json
 
 lua/env.lua
+
+# Scretch files
+scretch/*
