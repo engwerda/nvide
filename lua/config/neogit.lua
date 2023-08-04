@@ -84,6 +84,7 @@ local function neogit_config()
 end
 
 function M.setup()
+  neogit.setup {}
   neogit_config()
 end
 
