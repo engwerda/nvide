@@ -190,7 +190,14 @@ return packer.startup(function(use)
 	})
 
 	-- Copilot
-	use({ "github/copilot.vim", config = get_config("copilot") })
+	-- use({ "github/copilot.vim", config = get_config("copilot") })
+
+	-- Codeium
+	use({
+		"Exafunction/codeium.vim",
+		config = function()
+		end,
+	})
 
 	-- Coq
 	use({
