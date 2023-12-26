@@ -172,31 +172,20 @@ return packer.startup(function(use)
 	-- use("Mofiqul/dracula.nvim")
 	-- use("lunarvim/darkplus.nvim")
 	-- use({ "briones-gabriel/darcula-solid.nvim", requires = "rktjmp/lush.nvim" })
+
 	use({
 		"ray-x/starry.nvim",
-		lazy = false, -- make sure we load this during startup if it is your main colorscheme
-		priority = 1000, -- make sure to load this before all the other start plugins
-		setup = function()
-			vim.g.starry_italic_comments = true
-			vim.g.starry_italic_keywords = true
-			vim.g.starry_italic_functions = false
-			vim.g.starry_italic_variables = false
-			vim.g.starry_italic_string = false
-			vim.g.starry_italic_boolean = true
-			vim.g.starry_darker_contrast = true
-			vim.g.tarry_style = "moonlight"
-			vim.cmd([[colorscheme dracula]])
+		config = function()
+			require("config.starry").setup()
 		end,
 	})
-
 	-- Copilot
 	-- use({ "github/copilot.vim", config = get_config("copilot") })
 
 	-- Codeium
 	use({
 		"Exafunction/codeium.vim",
-		config = function()
-		end,
+		config = function() end,
 	})
 
 	-- Coq
@@ -228,6 +217,7 @@ return packer.startup(function(use)
 			{ "nvim-lua/plenary.nvim" },
 		},
 	})
+	use({ "nvim-telescope/telescope-live-grep-args.nvim" })
 
 	-- Treesitter
 	use({
@@ -326,7 +316,6 @@ return packer.startup(function(use)
 	-- Note taking
 	use({
 		"jakewvincent/mkdnflow.nvim",
-		rocks = "luautf8", -- Ensures optional luautf8 dependency is installed
 		config = function()
 			require("mkdnflow").setup({})
 		end,

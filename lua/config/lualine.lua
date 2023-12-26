@@ -24,6 +24,17 @@ local diff = {
 	cond = hide_in_width,
 }
 
+local function diff_source()
+	local gitsigns = vim.b.gitsigns_status_dict
+	if gitsigns then
+		return {
+			added = gitsigns.added,
+			modified = gitsigns.changed,
+			removed = gitsigns.removed,
+		}
+	end
+end
+
 local mode = {
 	"mode",
 	fmt = function(str)
@@ -66,8 +77,10 @@ lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = "auto",
-		component_separators = { left = "", right = "" },
+		-- component_separators = { left = "", right = "" },
 		section_separators = { left = "", right = "" },
+		-- section_separators = { left = "", right = "" },
+		component_separators = { left = "", right = "" },
 		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
 		always_divide_middle = true,
 	},
@@ -75,7 +88,23 @@ lualine.setup({
 		lualine_a = { mode },
 		lualine_b = { branch, diff, diagnostics, "searchcount" },
 		lualine_c = { { "filename", path = 1 } },
-		lualine_x = { spaces, "encoding", "fileformat", filetype },
+		lualine_x = {
+			-- {
+			-- 	function()
+			-- 		local status = vim.fn["codeium#GetStatusString"]()
+			-- 		if status then
+			-- 			return "suggestions " .. status:lower():match("^%s*(.-)%s*$")
+			-- 		end
+			-- 		return ""
+			-- 	end,
+			-- 	cond = function()
+			-- 		return vim.fn["codeium#GetStatusString"]() ~= nil
+			-- 	end,
+			-- },
+			"encoding",
+			"fileformat",
+			"filetype",
+		},
 		lualine_y = { progress },
 		lualine_z = { location },
 	},

@@ -43,6 +43,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 ]])
 
 	vim.g.coc_global_extensions = {
+    "coc-calc",
 		"coc-clangd",
 		"coc-css",
 		"coc-cssmodules",
@@ -54,6 +55,7 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 		"coc-eslint",
 		"coc-gitignore",
 		"coc-go",
+    "coc-highlight",
 		"coc-html",
 		"coc-html-css-support",
 		"coc-htmldjango",
@@ -73,7 +75,8 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 		"coc-spell-checker",
 		"coc-stylua",
 		"coc-sumneko-lua",
-		"coc-tabnine",
+    "coc-sql",
+		-- "coc-tabnine",
     "@yaegassy/coc-tailwindcss3",
 		"coc-toml",
 		"coc-tsserver",

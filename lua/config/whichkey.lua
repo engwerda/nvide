@@ -121,13 +121,20 @@ local mappings = {
 		P = { ":BufferLinePick<CR>", "Pick Buffer" },
 	},
   c = {
-    name = "AI",
-    a = { "<cmd>:ChatGPTActAs<cr>", "Act as prompt" },
-    d = { "<cmd>:NeuralCode add documentation<cr>", "Add documentation" },
-    e = { "<cmd>:ChatGPTEditWithInstructions<cr>", "Edit With Instructions" },
-    p = { "<cmd>:NeuralPrompt<cr>", "Neural Prompt" },
-    P = { "<cmd>:ChatGPT<cr>", "GPT-3 prompt" },
-    s = { "<cmd>:NeuralText Fix spelling and grammar and rephrase in a professional tone<cr>", "Fix spelling and grammar" },
+    name = "ChatGPT",
+    c = { "<cmd>ChatGPT<CR>", "ChatGPT" },
+    e = { "<cmd>ChatGPTEditWithInstruction<CR>", "Edit with instruction", mode = { "n", "v" } },
+    g = { "<cmd>ChatGPTRun grammar_correction<CR>", "Grammar Correction", mode = { "n", "v" } },
+    t = { "<cmd>ChatGPTRun translate<CR>", "Translate", mode = { "n", "v" } },
+    k = { "<cmd>ChatGPTRun keywords<CR>", "Keywords", mode = { "n", "v" } },
+    d = { "<cmd>ChatGPTRun docstring<CR>", "Docstring", mode = { "n", "v" } },
+    a = { "<cmd>ChatGPTRun add_tests<CR>", "Add Tests", mode = { "n", "v" } },
+    o = { "<cmd>ChatGPTRun optimize_code<CR>", "Optimize Code", mode = { "n", "v" } },
+    s = { "<cmd>ChatGPTRun summarize<CR>", "Summarize", mode = { "n", "v" } },
+    f = { "<cmd>ChatGPTRun fix_bugs<CR>", "Fix Bugs", mode = { "n", "v" } },
+    x = { "<cmd>ChatGPTRun explain_code<CR>", "Explain Code", mode = { "n", "v" } },
+    r = { "<cmd>ChatGPTRun roxygen_edit<CR>", "Roxygen Edit", mode = { "n", "v" } },
+    l = { "<cmd>ChatGPTRun code_readability_analysis<CR>", "Code Readability Analysis", mode = { "n", "v" } },
   },
 
 	f = {
@@ -215,7 +222,8 @@ local mappings = {
 
 	s = {
 		name = "Search",
-		s = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+		-- s = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+		s = { "<cmd>lua require('telescope').extensions.live_grep_args.live_grep_args()<cr>", "Find Text" },
 		S = { "<cmd>lua require('spectre').open()<cr>", "Search & Replace" },
 		w = { "<cmd>lua require('spectre').open_visual({select_word=true})<cr>", "Search current word" },
 		f = { "<cmd>lua require('spectre').open_file_search()<cr>", "Find in current file" },

@@ -21,6 +21,7 @@
   "snippets.ultisnips.directories": ["UltiSnips", "~/.config/nvim/utils/snips"],
   "diagnostic.refreshOnInsertMode": true,
   "codeLens.enable": true,
+  "colors.enable": true,
   "yank.highlight.duration": 300,
   // Python
   "pyright.enable": true,

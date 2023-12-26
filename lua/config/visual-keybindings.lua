@@ -15,13 +15,6 @@ local function set_keymaps()
 		k = { ":move '>-2<CR>gv-gv", "Move text up (broken)" },
 		j = { ":move '>+1<CR>gv-gv", "Move text down" },
 		p = { '"_dP', "paste in place" },
-  c = {
-    name = "AI",
-    a = { "<cmd>:ChatGPTActAs<cr>", "Act as prompt" },
-    e = { "<cmd>:ChatGPTEditWithInstructions<cr>", "Edit With Instructions" },
-    P = { "<cmd>:ChatGPT<cr>", "GPT prompt" },
-    r = { "<cmd>:ChatGPTRun", "Run GPT action" },
-  },
 		x = {
 			name = "Text",
 			["<"] = { "<gv", "Move text left" },

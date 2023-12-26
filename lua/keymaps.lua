@@ -80,3 +80,21 @@ keymap('n', "<A-k>", '<CMD>NavigatorUp<CR>', opts)
 keymap('n', "<A-j>", '<CMD>NavigatorDown<CR>', opts)
 keymap('n', "<A-p>", '<CMD>NavigatorPrevious<CR>', opts)
 
+-- Copy to clipboard in normal and visual mode
+keymap('n', '<C-c>', '"+y', opts)
+keymap('v', '<C-c>', '"+y', opts)
+
+-- Paste from clipboard in normal and insert mode
+keymap('n', '<C-v>', '"+p', opts)
+keymap('i', '<C-v>', '<C-r>+', opts)
+
+-- Command mode mapping for paste from clipboard
+keymap('c', '<C-v>', '<C-r>+', opts)
+
+-- Insert mode mapping for <C-r>
+keymap('i', '<C-r>', '<C-v>', opts)
+
+-- Additional mappings for Shift-Insert
+keymap('n', '<S-Insert>', '"+p', opts)
+keymap('i', '<S-Insert>', '<C-r>+', opts)
+keymap('c', '<S-Insert>', '<C-r>+', opts)
